@@ -1,0 +1,16 @@
+includes:
+    - %currentWorkingDirectory%/vendor/narrowspark/coding-standard/base_rules.neon
+    - %currentWorkingDirectory%/phpstan-baseline.neon
+    - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+    paths:
+        -  %currentWorkingDirectory%/src
+        -  %currentWorkingDirectory%/tests
+
+    tmpDir: %currentWorkingDirectory%/.build/phpstan
+
+    excludes_analyse:
+
+    ignoreErrors:
