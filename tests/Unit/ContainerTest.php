@@ -40,7 +40,7 @@ final class ContainerTest extends TestCase
         parent::setUp();
 
         $this->container = new Container([
-            stdClass::class => static fn (Container $container): string => stdClass::class,
+            stdClass::class => static fn (): string => stdClass::class,
             'vendor-dir' => static fn (): string => '/vendor',
         ]);
     }
