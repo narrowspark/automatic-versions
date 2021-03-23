@@ -1,11 +1,11 @@
 {
-    "name": "narrowspark/php-library-template",
+    "name": "narrowspark/automatic-versions",
     "type": "library",
-    "description": "Provides a GitHub repository template for a Narrowspark PHP library, using GitHub actions.",
+    "description": "List generator for split packages.",
     "keywords": [
         "narrowspark"
     ],
-    "homepage": "http://github.com/narrowspark/php-library-template",
+    "homepage": "http://github.com/narrowspark/automatic-versions",
     "license": "MIT",
     "authors": [
         {
@@ -16,12 +16,20 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
+        "php": "^8.0",
+        "ext-json": "*",
+        "ext-tokenizer": "*",
+        "guzzlehttp/guzzle": "^7.3.0",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "knplabs/github-api": "^3.0",
+        "php-http/curl-client": "^2.2.0",
+        "symfony/filesystem": "^5.2.0",
         "thecodingmachine/safe": "^1.1.3"
     },
     "require-dev": {
-        "ext-json": "*",
-        "narrowspark/coding-standard": "^5.2.1",
+        "friendsofphp/php-cs-fixer": "2.18.3",
+        "mockery/mockery": "^1.4.3",
+        "narrowspark/coding-standard": "^5.2.3",
         "phpunit/phpunit": "^9.5.2",
         "thecodingmachine/phpstan-safe-rule": "^1.0.1"
     },
@@ -36,7 +44,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Narrowspark\\Library\\": "src/"
+            "Narrowspark\\Automatic\\Versions\\": "src/"
         },
         "exclude-from-classmap": [
             "/tests/"
@@ -44,7 +52,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Narrowspark\\Library\\Tests\\": "tests/"
+            "Narrowspark\\Automatic\\Versions\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",
@@ -62,10 +70,11 @@
         "rector": "rector process --ansi --dry-run",
         "rector:fix": "rector process --ansi",
         "test": "phpunit",
-        "test:coverage": "phpunit --coverage-html=./.build/phpunit/coverage"
+        "test:coverage": "phpunit --coverage-html=./.build/phpunit/coverage",
+        "update:versions": "php ./bin/versions.php"
     },
     "support": {
-        "issues": "https://github.com/narrowspark/php-library-template/issues",
-        "source": "https://github.com/narrowspark/php-library-template"
+        "issues": "https://github.com/narrowspark/automatic-versions/issues",
+        "source": "https://github.com/narrowspark/automatic-versions"
     }
 }

@@ -1,0 +1,22 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Interface Narrowspark\\\\Automatic\\\\Versions\\\\Contract\\\\Container should end with \"Interface\" suffix\\.$#"
+			count: 1
+			path: src/Contract/Container.php
+
+		-
+			message: "#^Interface name \"Container\" must be suffixed with \"Interface\"$#"
+			count: 1
+			path: src/Contract/Container.php
+
+		-
+			message: "#^Interface Narrowspark\\\\Automatic\\\\Versions\\\\Contract\\\\Provider should end with \"Interface\" suffix\\.$#"
+			count: 1
+			path: src/Contract/Provider.php
+
+		-
+			message: "#^Interface name \"Provider\" must be suffixed with \"Interface\"$#"
+			count: 1
+			path: src/Contract/Provider.php
+
