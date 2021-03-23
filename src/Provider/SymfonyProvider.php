@@ -17,6 +17,7 @@ use GuzzleHttp\Psr7\Request;
 use Http\Client\Curl\Client;
 use Narrowspark\Automatic\Versions\Contract\Provider;
 use const JSON_THROW_ON_ERROR;
+use function Safe\json_decode;
 
 final class SymfonyProvider implements Provider
 {
@@ -27,7 +28,7 @@ final class SymfonyProvider implements Provider
     /**
      * {@inheritdoc}
      *
-     * @return mixed[]
+     * @return array<int|string, array>
      */
     public function fetch(): array
     {
@@ -42,7 +43,7 @@ final class SymfonyProvider implements Provider
             ));
 
         $stream = $response->getBody();
-        $json = \Safe\json_decode(trim($stream->__toString()), true, 512, JSON_THROW_ON_ERROR);
+        $json = json_decode(trim($stream->__toString()), true, 512, JSON_THROW_ON_ERROR);
 
         return $json['splits'];
     }

@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Narrowspark\Automatic\Versions;
 
+/** @noRector \Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector */
 use Narrowspark\Automatic\Versions\Contract\Provider as ProviderContract;
 use Safe\DateTimeImmutable;
 use Symfony\Component\Filesystem\Filesystem;
@@ -29,8 +30,12 @@ final class Builder
     {
     }
 
+    /**
+     * @noRector
+     */
     public function setProvider(string $name, ProviderContract $provider): void
     {
+        /** @noRector */
         $this->providers[$name] = $provider;
     }
 

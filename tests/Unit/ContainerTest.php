@@ -58,9 +58,15 @@ final class ContainerTest extends TestCase
             self::assertSame($expected, $value);
         }
 
-        if (is_object($value) && is_string($expected)) {
-            self::assertInstanceOf($expected, $value);
+        if (! is_object($value)) {
+            return;
         }
+
+        if (! is_string($expected)) {
+            return;
+        }
+
+        self::assertInstanceOf($expected, $value);
     }
 
     public function testGetThrowException(): void
@@ -85,6 +91,9 @@ final class ContainerTest extends TestCase
         self::assertCount(2, $this->container->getAll());
     }
 
+    /**
+     * @return \Iterator<array<class-string<\stdClass>>>
+     */
     public static function provideContainerInstancesCases(): iterable
     {
         yield [stdClass::class, stdClass::class];

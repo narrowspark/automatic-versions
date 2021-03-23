@@ -27,12 +27,12 @@ final class Container implements ContainerContract
      */
     private array $objects = [];
 
-    public function __construct(
-        /**
-         * The array of closures defining each entry of the container.
-         */
-        private array $data
-    ) {
+    /**
+     * The array of closures defining each entry of the container.
+     *
+     * @psalm-param callable[] $data
+     */
+    public function __construct(private array $data) {
     }
 
     /**
