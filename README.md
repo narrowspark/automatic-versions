@@ -1,4 +1,4 @@
-<h1 align="center">PHP library template</h1>
+<h1 align="center">Automatic Versions Generator</h1>
 <p align="center">
     <a href="https://php.net/"><img src="https://img.shields.io/badge/php-%5E8.0.0-8892BF.svg?style=flat-square"></a>
     <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square"></a>
@@ -6,29 +6,17 @@
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
 </p>
 
-Provides a GitHub repository template for a Narrowspark PHP library, using GitHub actions.
-
-## Installation
-
-:bulb: this is a great place for showing how to install the package, see below:
-
-Run
-
-```
-$ composer require narrowspark/php-library-template
-```
+Provides generated split package versions files.
 
 ## Usage
 
-:bulb: this is a great place for showing, usage examples
+You can find the generated files under:
 
-## Versioning
+- `https://automatic.narrowspark.com/versions/laravel/framework/versions.json`
+- `https://automatic.narrowspark.com/versions/narrowspark/framework/versions.json`
+- `https://automatic.narrowspark.com/versions/symfony/symfony/versions.json`
 
-This library follows semantic versioning, and additions to the code ruleset are performed in major releases.
-
-## Changelog
-
-Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
+These files are used by the [narrowspark/automatic-composer-legacy-filter](https://github.com/narrowspark/automatic) to reduce the composer memory on package resolving.
 
 ## Contributing
 

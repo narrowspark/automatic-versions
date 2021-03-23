@@ -1,0 +1,42 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^new \\<class\\> is limited to 3 \"new \\<class\\>\\(new \\<class\\>\\)\\)\" nesting to each other\\. You have 11 nesting\\.$#"
+			count: 1
+			path: bin/versions.php
+
+		-
+			message: "#^Class with base \"Container\" name is already used in \"_HumbugBoxa9bfddcdef37\\\\Nette\\\\DI\\\\Container\", \"Narrowspark\\\\Automatic\\\\Versions\\\\Container\"\\. Use unique name to make classes easy to recognize$#"
+			count: 1
+			path: src/Container.php
+
+		-
+			message: "#^\\$this as argument is not allowed\\. Refactor method to service composition$#"
+			count: 1
+			path: src/Container.php
+
+		-
+			message: "#^Class with base \"Container\" name is already used in \"_HumbugBoxa9bfddcdef37\\\\Nette\\\\DI\\\\Container\", \"Narrowspark\\\\Automatic\\\\Versions\\\\Container\"\\. Use unique name to make classes easy to recognize$#"
+			count: 1
+			path: src/Contract/Container.php
+
+		-
+			message: "#^Interface Narrowspark\\\\Automatic\\\\Versions\\\\Contract\\\\Container should end with \"Interface\" suffix\\.$#"
+			count: 1
+			path: src/Contract/Container.php
+
+		-
+			message: "#^Interface name \"Container\" must be suffixed with \"Interface\"$#"
+			count: 1
+			path: src/Contract/Container.php
+
+		-
+			message: "#^Interface Narrowspark\\\\Automatic\\\\Versions\\\\Contract\\\\Provider should end with \"Interface\" suffix\\.$#"
+			count: 1
+			path: src/Contract/Provider.php
+
+		-
+			message: "#^Interface name \"Provider\" must be suffixed with \"Interface\"$#"
+			count: 1
+			path: src/Contract/Provider.php
+

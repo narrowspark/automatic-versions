@@ -12,7 +12,7 @@ $license = License\Type\MIT::markdown(
         new \DateTimeZone('UTC')
     ),
     License\Holder::fromString('Daniel Bannert'),
-    License\Url::fromString('https://github.com/narrowspark/php-library-template')
+    License\Url::fromString('https://github.com/narrowspark/automatic-versions')
 );
 
 $license->save();
@@ -24,11 +24,12 @@ $config->getFinder()
     ->in(__DIR__)
     ->exclude([
         '.build',
-        '.dependabot',
         '.docker',
         '.github',
-        'vendor',
+        'vendor'
     ])
+    // php_unit_namespaced rule thinks than the const are some namespaces
+    ->notPath('rector.php')
     ->name('*.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
