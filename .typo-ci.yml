@@ -49,6 +49,8 @@ excluded_words:
     - "prisis"
     - "narrowspark"
     - "composer"
+    - "viserio"
+    - "guzzlehttp"
 
 # Would you like filenames to also be spellchecked?
 spellcheck_filenames: true

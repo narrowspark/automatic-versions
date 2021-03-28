@@ -20,10 +20,12 @@
     </issueHandlers>
 
     <plugins>
+        <pluginClass class="Psalm\MockeryPlugin\Plugin" />
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
     </plugins>
 
     <projectFiles>
+        <directory name="bin" />
         <directory name="src" />
         <directory name="tests" />
         <ignoreFiles>

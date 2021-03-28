@@ -6,11 +6,12 @@ includes:
 
 parameters:
     paths:
+        -  %currentWorkingDirectory%/bin
         -  %currentWorkingDirectory%/src
         -  %currentWorkingDirectory%/tests
 
     tmpDir: %currentWorkingDirectory%/.build/phpstan
 
-    excludes_analyse:
-
-    ignoreErrors:
+    symplify:
+        too_long_variable:
+            max_variable_length: 20
